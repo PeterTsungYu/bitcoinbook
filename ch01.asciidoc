@@ -1,3 +1,45 @@
+
+Note-01:
+Essentially, bitcoin mining decentralizes the currency-issuance and clearing functions of a central bank and replaces the need for any central bank.
+
+Note-02:
+Mining succeeds every 10 minutes regardless of how many miners (and how much processing) are competing at any moment.
+
+Note-03:
+The protocol also halves the rate at which new bitcoin are created every 4 years, and limits the total number of bitcoin that will be created to a fixed total just below 21 million coins by the year 2040.
+
+Variables-03:
+1. Issuance rate of the mined bitcoin.(Block per second. (BPS)) -> Difficulty of the math puzzle and Number of miners.
+2. The total amount of the bitcoin.
+
+Q-03: After halving the rate, does it still follow the 10 mins issuance rate? Yes. 
+By reducing the numbers of succeed of the miner. TBE, by inhancing thr difficulty of the math puzzles.
+
+Note-04: Due to bitcoin’s diminishing rate of issuance, over the long term, the bitcoin currency is deflationary. Furthermore, bitcoin cannot be inflated by "printing" new money above and beyond the expected issuance rate.
+
+Note-05: Satoshi Nakamoto’s solution, which uses the concept of Proof-of-Work to achieve consensus without a central trusted authority.
+
+Note-06: 
+A lightweight client connects to bitcoin full nodes (mentioned previously) for access to the bitcoin transaction information, but stores the user wallet locally and independently creates, validates, and transmits transactions. Lightweight clients interact directly with the bitcoin network, without an intermediary.
+
+Q-06: Generally, how to do the "validation"?
+
+Note-07: Bitcoin addresses start with a 1 or 3.
+
+Note-08: Many modern wallets automatically create a new address for every transaction to maximize privacy.
+
+Note-09: Only once it has been associated with a transaction does it become part of the known addresses in the network.
+
+Note-10:  Most electronic payment networks such as credit cards, debit cards, PayPal, and bank account transfers are reversible.
+
+Q-10: How come?
+
+Note-11: Joe’s mobile bitcoin wallet constructs a transaction that assigns 0.10 BTC to the address provided by Alice, sourcing the funds from Joe’s wallet and signing the transaction with Joe’s private keys.
+
+Note-12: Meanwhile, Alice’s wallet is constantly "listening" to published transactions on the bitcoin network, looking for any that match the addresses in her wallets.
+
+
+
 [role="pagenumrestart"]
 [[ch01_intro_what_is_bitcoin]]
 == Introduction
