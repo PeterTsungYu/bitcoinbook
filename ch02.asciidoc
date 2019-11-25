@@ -1,3 +1,85 @@
+Note-01: Each transaction contains one or more "inputs," which are like debits against a bitcoin account. On the other side of the transaction, there are one or more "outputs," which are like credits added to a bitcoin account.
+
+Note-02: Transaction fee, which is a small payment collected by the miner who includes the transaction in the ledger.
+
+Q-02: Miner reward: 1. Brand new bitcoin + 2. Transaction fee ??
+
+Note-03: The transaction also contains proof of ownership for each amount of bitcoin (inputs) whose value is being spent, in the form of a digital signature from the owner, which can be independently validated by anyone. In bitcoin terms, "spending" is signing a transaction that transfers value from a previous transaction over to a new owner identified by a bitcoin address.
+
+Note-04: Alice’s payment to Bob’s Cafe uses a previous transaction’s output as its input.
+
+Note-05:  Alice’s key provides the signature that unlocks those previous transaction outputs, thereby proving to the bitcoin network that she owns the funds.
+
+Q-05: Which key?
+
+Note-06: Importantly, the change address does not have to be the same address as that of the input and for privacy reasons is often a new address from the owner’s wallet.
+
+Note-07: In summary, transactions move value from transaction inputs to transaction outputs. An input is a reference to a previous transaction’s output, showing where the value is coming from. A transaction output directs a specific value to a new owner’s bitcoin address and can include a change output back to the original owner. Outputs from one transaction can be used as inputs in a new transaction, thus creating a chain of ownership as the value is moved from owner to owner.
+
+Note-08: Like writing a check at home and later sending it to the bank in an envelope, the transaction does not need to be constructed and signed while connected to the bitcoin network. (Offline transaction construction)
+
+Note-09: A bitcoin wallet application that runs as a full-node client actually contains a copy of every unspent output from every transaction in the blockchain. Because a full-node client takes up a lot of disk space, most user wallets run "lightweight" clients that track only the user’s own unspent outputs.
+
+Note-10: A transaction output is created in the form of a script that creates an encumbrance on the value and can only be redeemed by the introduction of a solution to the script. In simpler terms, Alice’s transaction output will contain a script that says something like, "This output is payable to whoever can present a signature from the key corresponding to Bob’s public address." Because only Bob has the wallet with the keys corresponding to that address, only Bob’s wallet can present such a signature to redeem this output. Alice will therefore "encumber" the output value with a demand for a signature from Bob.
+
+Note-11: The resulting difference is the transaction fee that is collected by the miner as a fee for validating and including the transaction in a block to be recorded on the blockchain.
+
+Note-12: Any bitcoin node that receives a valid transaction it has not seen before will immediately forward it to all other nodes to which it is connected, a propagation technique known as flooding. Thus, the transaction rapidly propagates out across the peer-to-peer network, reaching a large percentage of the nodes within a few seconds.
+
+Note-13: A common misconception about bitcoin transactions is that they must be "confirmed" by waiting 10 minutes for a new block, or up to 60 minutes for a full six confirmations. Although confirmations ensure the transaction has been accepted by the whole network, such a delay is unnecessary for small-value items such as a cup of coffee. A merchant may accept a valid small-value transaction with no confirmations, with no more risk than a credit card payment made without an ID or a signature, as merchants routinely accept today. (Doubted)
+
+Note-14: Transactions are bundled into blocks, which require an enormous amount of computation to prove, but only a small amount of computation to verify as proven. 
+
+Q-14: How to verify?
+
+Note-15: The mining process serves two purposes in bitcoin:
+
+1. Mining nodes validate all transactions by reference to bitcoin’s consensus rules. Therefore, mining provides security for bitcoin transactions by rejecting invalid or malformed transactions.
+
+2. Mining creates new bitcoin in each block, almost like a central bank printing new money. The amount of bitcoin created per block is limited and diminishes with time, following a fixed issuance schedule.
+
+Q-15: How to validate/verify transactions? By a certain public key? The transaction also contains proof of ownership for each amount of bitcoin (inputs) whose value is being spent, in the form of a digital signature from the owner, which can be independently validated by anyone.
+
+Note-16: A successful miner will collect a reward in the form of new bitcoin and transaction fees.
+
+Note-17: Difficulty automatically adjusts so that it takes approximately 10 minutes to find a solution.
+
+Note-18: If I show you a completed puzzle you can verify it quite quickly. However, if the puzzle has a few squares filled and the rest are empty, it takes a lot of work to solve! 
+
+Note-19: The "puzzle" used in bitcoin is based on a cryptographic hash and exhibits similar characteristics: it is asymmetrically hard to solve but easy to verify, and its difficulty can be adjusted.
+
+Note-20: The algorithm for Proof-of-Work involves repeatedly hashing the header of the block and a random number with the SHA256 cryptographic algorithm until a solution matching a predetermined pattern emerges. The first miner to find such a solution wins the round of competition and publishes that block into the blockchain.
+
+Note-21: As miners construct a new block, they add unverified transactions from this pool to the new block and then attempt to prove the validity of that new block, with the mining algorithm (Proof-of-Work).
+
+Note-22: Transactions are added to the new block, prioritized by the highest-fee transactions first and a few other criteria.
+
+Note-23: Each miner starts the process of mining a new block of transactions as soon as he receives the previous block from the network, knowing he has lost that previous round of competition.
+
+Note-24:  Each miner includes a special transaction in his block, one that pays his own bitcoin address the block reward (currently 12.5 newly created bitcoin) plus the sum of transaction fees from all the transactions included in the block.
+
+Q-24: If a miner choose not to select the higher transaction fees as the criteria?
+
+Note-25: If he finds a solution that makes that block valid, he "wins" this reward because his successful block is added to the global blockchain and the reward transaction he included becomes spendable.
+
+Note-26: Candidate block & Winning block.
+
+Note-27: Once other miners validated the winning block they started the race to generate the next block.
+
+Note-28: it added even more computation to the blockchain, thereby strengthening the trust in those transactions. As the blocks pile on top of each other, it becomes exponentially harder to reverse the transaction, thereby making it more and more trusted by the network.
+
+Note-29: By convention, any block with more than six confirmations is considered irrevocable, because it would require an immense amount of computation to invalidate and recalculate six blocks.
+
+Note-30: Each bitcoin client can independently verify the transaction as valid and spendable.
+
+Note-31: Full-node clients can track the source of the funds from the moment the bitcoin were first generated in a block, incrementally from transaction to transaction, until they reach Bob’s address. Lightweight clients can do what is called a simplified payment verification (see [spv_nodes]) by confirming that the transaction is in the blockchain and has several blocks mined after it, thus providing assurance that the miners accepted it as valid.
+
+Q-31: I think the spv sounds better.
+
+Note-32: Most likely, Bob’s bitcoin software will aggregate many small payments into a larger payment, perhaps concentrating all the day’s bitcoin revenue into a single transaction. This would aggregate the various payments into a single output (and a single address).
+
+
+
 [[ch02_bitcoin_overview]]
 == How Bitcoin Works
 
